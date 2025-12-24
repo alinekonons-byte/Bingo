@@ -5,7 +5,7 @@ const ultimosCincoEl = document.getElementById("ultimosCinco");
 const bingoBtn = document.getElementById("bingoBtn");
 const resetBtn = document.getElementById("resetBtn");
 const bingoOverlay = document.getElementById("bingoOverlay");
-const undoBtn = document.getElementById("undoBtn");
+
 
 let numeros = JSON.parse(localStorage.getItem("numerosBingo")) || [];
 
@@ -81,21 +81,27 @@ resetBtn.addEventListener("click", () => {
   }
 })
 
-undoBtn.addEventListener("click", () => {
+function corrigirUltimo() {
   if (numeros.length === 0) return;
 
   const ultimo = numeros.pop();
 
-  document.getElementById(`num-${ultimo}`).classList.remove("sorteado");
+  // desmarca o número da grade
+  const cell = document.getElementById(`num-${ultimo}`);
+  if (cell) cell.classList.remove("sorteado");
 
+  // salva novamente
   localStorage.setItem("numerosBingo", JSON.stringify(numeros));
 
+  // atualiza número grande
   if (numeros.length > 0) {
     ultimoNumeroEl.textContent = numeros[numeros.length - 1];
   } else {
     ultimoNumeroEl.textContent = "--";
   }
 
+  // atualiza últimos 5
   renderUltimosCinco();
-});
+}
+
 
