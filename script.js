@@ -5,6 +5,7 @@ const ultimosCincoEl = document.getElementById("ultimosCinco");
 const bingoBtn = document.getElementById("bingoBtn");
 const resetBtn = document.getElementById("resetBtn");
 const bingoOverlay = document.getElementById("bingoOverlay");
+const undoBtn = document.getElementById("undoBtn");
 
 let numeros = JSON.parse(localStorage.getItem("numerosBingo")) || [];
 
@@ -78,4 +79,23 @@ resetBtn.addEventListener("click", () => {
     localStorage.removeItem("numerosBingo");
     location.reload();
   }
+})
+
+undoBtn.addEventListener("click", () => {
+  if (numeros.length === 0) return;
+
+  const ultimo = numeros.pop();
+
+  document.getElementById(`num-${ultimo}`).classList.remove("sorteado");
+
+  localStorage.setItem("numerosBingo", JSON.stringify(numeros));
+
+  if (numeros.length > 0) {
+    ultimoNumeroEl.textContent = numeros[numeros.length - 1];
+  } else {
+    ultimoNumeroEl.textContent = "--";
+  }
+
+  renderUltimosCinco();
 });
+
