@@ -6,9 +6,10 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-image: url("fundo.jpg");
+  background-image: url("fundo.png"); /* ou fundo.jpg */
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   color: #eaf7ef;
 }
 
