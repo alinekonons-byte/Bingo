@@ -31,6 +31,10 @@ input.addEventListener("keydown", e => {
   if (e.key === "Enter") adicionarNumero();
 });
 
+function corrigirUltimo() {
+  alert("CLIQUEI NO BOTÃO");
+}
+
 function adicionarNumero() {
   const n = Number(input.value);
   if (n < 1 || n > 75 || numeros.includes(n)) {
