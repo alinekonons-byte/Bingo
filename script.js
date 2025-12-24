@@ -49,12 +49,16 @@ function adicionarNumero() {
 
 function renderUltimosCinco() {
   ultimosCincoEl.innerHTML = "";
-  numeros.slice(-5).forEach(n => {
-    const box = document.createElement("div");
-    box.textContent = n;
-    ultimosCincoEl.appendChild(box);
-  });
+  numeros
+    .slice(-5)
+    .reverse() // 👈 ISSO AQUI resolve
+    .forEach(n => {
+      const box = document.createElement("div");
+      box.textContent = n;
+      ultimosCincoEl.appendChild(box);
+    });
 }
+
 
 bingoBtn.addEventListener("click", () => {
   bingoOverlay.classList.remove("hidden");
