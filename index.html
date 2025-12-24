@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bingo de Natal 🎄</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<h1>Bingo de Natal</h1>
+
+<div class="container">
+
+  <!-- LADO ESQUERDO -->
+  <div class="left">
+
+    <div class="last-number">
+      <span id="ultimoNumero">--</span>
+    </div>
+
+    <div class="last-five">
+      <h3>Últimos 5 números</h3>
+      <div id="ultimosCinco" class="five-boxes"></div>
+    </div>
+
+    <div class="input-area">
+      <label>Digite o número:</label>
+      <input type="number" id="numeroInput" min="1" max="75" />
+    </div>
+
+    <button id="bingoBtn" class="bingo-btn">Bingo!</button>
+
+  </div>
+
+  <!-- LADO DIREITO -->
+  <div class="right">
+    <div id="grid" class="grid"></div>
+  </div>
+
+</div>
+
+<button id="resetBtn" class="reset-btn">Reiniciar</button>
+
+<!-- OVERLAY BINGO -->
+<div id="bingoOverlay" class="bingo-overlay hidden">
+  <div class="bingo-text">BINGO!</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
