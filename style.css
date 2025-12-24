@@ -100,20 +100,6 @@ input {
   background: #146c43;
 }
 
-.undo-btn {
-  padding: 10px;
-  font-size: 1.2rem;
-  background: rgba(255, 255, 255, 0.2);
-  color: #eaf7ef;
-  border: 1px solid rgba(255,255,255,0.4);
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.undo-btn:hover {
-  background: rgba(255, 255, 255, 0.35);
-}
-
 .right {
   width: 70%;
 }
@@ -179,4 +165,18 @@ input {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
   100% { transform: scale(1); }
+}
+
+.undo-btn {
+  padding: 10px;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #eaf7ef;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.undo-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
